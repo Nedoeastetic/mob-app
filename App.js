@@ -1,24 +1,31 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity} from 'react-native';
 import React from 'react';
-// import { NavigationContainer } from '@react-navigation/native';
-// import { createStackNavigator } from '@react-navigation/stack';
-// import Task from './task';
+  import { NavigationContainer } from '@react-navigation/native';
+ import { createStackNavigator } from '@react-navigation/stack';
+
+ import Task from './Tasks';
 const Stack = createStackNavigator();
 
 
 export default function App() {
 
   return (
+    
     <View style={styles.container}>
       <View style={styles.rectangle}>
         <Text style={styles.text}>NeuroApp</Text>
         <Text style={styles.textA} top={90} left={120}>Выберите задачу</Text>
         <View style={styles.minirectangle}  top={100} left={50}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={()=>Navigation.navigate('Tasks')} Link href='/Task'>
             <Text style={styles.buttonText} top={5}>решение{'\n'}задач
         </Text>
-          
+        <NavigationContainer>
+        <Stack.Navigator initialRouteName="Tasks">
+          <Stack.Screen name="Tasks" component={Task} />
+         
+        </Stack.Navigator>
+      </NavigationContainer>
           </TouchableOpacity>
         </View>
         <View style={styles.minirectangle} top={60} left={128}>

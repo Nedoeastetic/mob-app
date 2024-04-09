@@ -31,7 +31,7 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 
-const Task = ({navigation}) => {
+const Task = () => {
   const [expanded, setExpanded] = useState(false);
 
   const toggleAccordion = () => {
@@ -41,10 +41,10 @@ const Task = ({navigation}) => {
   return (
     <View>
 
-<Text>Home Screen</Text>
-        <TouchableOpacity onPress={() => navigation.navigate('Details')}>
-          <Text>Go to Details</Text>
-        </TouchableOpacity>
+{/* <Text>Home Screen</Text>
+        <TouchableOpacity onPress={() => navigation.navigate('App')}>
+          <Text>Go to Back</Text>
+        </TouchableOpacity> */}
       <TouchableOpacity onPress={toggleAccordion}>
         <Text style={{ fontSize: 20, fontWeight: 'bold' }}>
           Click to expand/collapse
